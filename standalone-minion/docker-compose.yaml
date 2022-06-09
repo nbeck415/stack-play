@@ -3,6 +3,8 @@ version: '3'
 services:
   minion:
     image: ${DOCKER_REGISTRY:-docker.io}/${DOCKER_ORG:-opennms}/${MINION_OCI:-minion}:${ONMS_VERSION:-bleeding}
+    labels:
+      shipyard.route: '/'
     container_name: minion
     hostname: minion
     sysctls:
